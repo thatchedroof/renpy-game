@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 127: menu statement expects a non-empty block.
+    menu day_1_school_navigate:
+        ^
+
+Ren'Py Version: Ren'Py 7.4.8.1895
+Mon Sep 13 21:01:24 2021
