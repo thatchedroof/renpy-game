@@ -1,32 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 190, in script
-    python:
-  File "renpy/common/00start.rpy", line 191, in <module>
-    renpy.execute_default_statement(True)
-  File "game/script.rpy", line 527, in set_default
-    default day_1_library_visited = False
-Exception: store.day_1_library_visited is being given a default a second time.
+  File "game/day_1.rpy", line 848, in script
+    jump d2_start
+ScriptError: could not find label 'd2_start'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 190, in script
-    python:
-  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/ast.py", line 923, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/python.py", line 2235, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00start.rpy", line 191, in <module>
-    renpy.execute_default_statement(True)
-  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/exports.py", line 3749, in execute_default_statement
-    i.set_default(start)
-  File "game/script.rpy", line 527, in set_default
-    default day_1_library_visited = False
-Exception: store.day_1_library_visited is being given a default a second time.
+  File "game/day_1.rpy", line 848, in script
+    jump d2_start
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/ast.py", line 1752, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/script.py", line 918, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'd2_start'.
 
 Linux-5.11.0-37-generic-x86_64-with-debian-bullseye-sid
 Ren'Py 7.4.8.1895
 vs DeO 1.0
-Fri Oct  1 22:03:14 2021
+Mon Oct  4 21:31:32 2021
