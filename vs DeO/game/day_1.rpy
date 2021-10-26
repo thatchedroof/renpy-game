@@ -28,21 +28,28 @@ label d1_start:
 
     mom "It doesn't do anything, honey. You're human."
 
-default ask_mom_morning_1_night = False
-default ask_mom_morning_1_school = False
+#default ask_mom_morning_1_night = False
+#default ask_mom_morning_1_school = False
 
 menu ask_mom_morning_1:
 
     "What happened last night?" if not ask_mom_morning_1_night:
+
         $ ask_mom_morning_1_night = True
+
         jump ask_mom_morning_1_night
 
     "What's the deal with my school?" if not ask_mom_morning_1_school:
+
         $ ask_mom_morning_1_school = True
+
         jump ask_mom_morning_1_school
 
     "I have to go to school now.":
+
         jump school_morning_1_start
+
+# renpy-graphviz: BREAK
 
 label ask_mom_morning_1_night:
 
@@ -57,6 +64,8 @@ label ask_mom_morning_1_night:
     m "Sorry, mom."
 
     jump ask_mom_morning_1
+
+# renpy-graphviz: BREAK
 
 label ask_mom_morning_1_school:
 
@@ -75,6 +84,8 @@ label ask_mom_morning_1_school:
     jump ask_mom_morning_1
 
 default d1_time = 0
+
+# renpy-graphviz: BREAK
 
 label school_morning_1_start:
 
@@ -179,6 +190,8 @@ menu d1_school_navigate_menu:
 
 default d1_main_hallway_v = False
 
+# renpy-graphviz: BREAK
+
 label d1_main_hallway:
     scene school hallway
     with fade
@@ -226,6 +239,8 @@ label d1_main_hallway:
     jump d1_school_navigate
 
 default d1_roof_v = False
+
+# renpy-graphviz: BREAK
 
 label d1_roof:
     scene school roof
@@ -307,6 +322,8 @@ label d1_roof:
 
 default d1_classroom_v = False
 
+# renpy-graphviz: BREAK
+
 label d1_classroom:
     show school classroom
     with fade
@@ -344,6 +361,8 @@ label d1_classroom:
     jump d1_school_navigate
 
 default d1_stairway_v = False
+
+# renpy-graphviz: BREAK
 
 label d1_stairway:
     scene school stairs
@@ -394,6 +413,8 @@ label d1_stairway:
     jump d1_school_navigate
 
 default d1_cafeteria_v = False
+
+# renpy-graphviz: BREAK
 
 label d1_cafeteria:
     scene school cafeteria
@@ -510,6 +531,8 @@ label neco_gotta_go:
 
 default d1_library_v = False
 
+# renpy-graphviz: BREAK
+
 label d1_library:
     show school library
     with fade
@@ -535,6 +558,8 @@ label d1_library:
     jump d1_school_navigate
 
 default d1_gym_v = False
+
+# renpy-graphviz: BREAK
 
 label d1_gym:
     show school gym
@@ -568,7 +593,9 @@ label d1_gym:
 
     jump d1_school_navigate
 
-default d1_math_class_v = False
+#default d1_math_class_v = False
+
+# renpy-graphviz: BREAK
 
 label d1_math_class:
     scene school classroom
@@ -623,7 +650,13 @@ menu math_test_q2:
     "27":
         call mtr
 
-jump d1_math_class_end
+label d1_math_class_end:
+    scene school classroom
+    with fade
+
+    $ d1_math_class_v = True
+
+    return
 
 label mtw:
     "Incorrect."
@@ -634,13 +667,7 @@ label mtr:
     $ math_test_score += 1
     return
 
-label d1_math_class_end:
-    scene school classroom
-    with fade
-
-    $ d1_math_class_v = True
-
-    return
+# renpy-graphviz: BREAK
 
 label d1_dismissal:
     scene school courtyard
