@@ -1,28 +1,39 @@
-﻿define m = Character("[n]")
+﻿define charfunc = lambda name, clr: Character(
+    name,
+    #kind=nvl,
+    #what_prefix="{}\n    ".format(name),
+    #what_suffix="",
+    color=clr,
+    #what_color=clr
+    )
 
-define mom = Character("Mom", color='#ff0080')
+define m = charfunc("[n]", '#ffffff')
 
-define arc = Character("Neco-Arc", color='#a80076')
+define mom = charfunc("Mom", '#ff0080')
 
-define deo = Character("DeO", color='#7c6352')
+define arc = charfunc("Neco-Arc", '#a80076')
 
-define roo = Character("Androo", color='#a2a3a5')
+define deo = charfunc("DeO", '#7c6352')
 
-define wd = Character("W. D.", color='#7df9ff')
+define roo = charfunc("Androo", '#a2a3a5')
 
-define pol = Character("Polish Guy", color='#dc143c')
+define wd = charfunc("W. D.", '#7df9ff')
 
-define dre = Character("Dream Dog", color='#ffffff')
+define pol = charfunc("Polish Guy", '#dc143c')
 
-define sus = Character("Neco-Arc", color='#a80057')
+define dre = charfunc("Dream Dog", '#ffffff')
 
-define zap = Character("Zap Rat", color='#808080')
+define sus = charfunc("Neco-Arc", '#a80057')
 
-define ari = Character("Strange One", color='#ff0080')
+define zap = charfunc("Zap Rat", '#808080')
 
-define pa = Character("PA system", color='#ffffff')
+define ari = charfunc("Strange One", '#ff0080')
 
-define tea = Character("Teacher", color='#ffffff')
+define pa = charfunc("PA system", '#ffffff')
+
+define tea = charfunc("Teacher", '#ffffff')
+
+define qqq = charfunc("???", '#ffffff')
 
 label start:
     jump d1_start

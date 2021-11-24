@@ -2,17 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/day_1.rpy", line 856: expected statement.
-    "Oh, there was that guy blocking the stairwell." if d1_stairway_v
-                                                     ^
+The label school_morning_1_start is defined twice, at File "game/day_1.rpy", line 88:
+label school_morning_1_start:
+and File "game/day_2.rpy", line 4:
+label school_morning_1_start:
 
-File "game/day_1.rpy", line 858: expected statement.
-    "And there was that strange being in the library." if d1_library_v
-                                                       ^
-
-File "game/day_1.rpy", line 860: expected statement.
-    "And what was that door they were trying to open in the gym?" if d1_gym_v
-                                                                  ^
 
 Ren'Py Version: Ren'Py 7.4.8.1895
-Mon Oct  4 21:41:21 2021
+Mon Nov 22 21:59:25 2021

@@ -11,7 +11,7 @@ label d1_start:
         n = n.strip().capitalize()
 
         if not n:
-            n = "Andrew"
+            n = "MC"
 
         nupper = n.upper()
 
@@ -28,8 +28,8 @@ label d1_start:
 
     mom "It doesn't do anything, honey. You're human."
 
-#default ask_mom_morning_1_night = False
-#default ask_mom_morning_1_school = False
+default ask_mom_morning_1_night = False
+default ask_mom_morning_1_school = False
 
 menu ask_mom_morning_1:
 
@@ -57,11 +57,9 @@ label ask_mom_morning_1_night:
 
     mom "You were up all night!"
 
-    mom "With your old neco friends."
+    mom "With your old neco friend."
 
-    m "You smell."
-
-    m "Sorry, mom."
+    m "Ok."
 
     jump ask_mom_morning_1
 
@@ -127,7 +125,7 @@ label school_morning_1_start:
 
     m "NECO-ARC!! Great to see you, bud."
 
-    arc "Was fun doing catnip!"
+    arc "Glad you're ok!"
 
     arc "You look wasted."
 
@@ -160,7 +158,7 @@ label d1_school_navigate:
 
         m "Oh, time for class."
 
-        call d1_math_class
+        call d1_math_class from _call_d1_math_class
 
 menu d1_school_navigate_menu:
 
@@ -593,7 +591,7 @@ label d1_gym:
 
     jump d1_school_navigate
 
-#default d1_math_class_v = False
+default d1_math_class_v = False
 
 # renpy-graphviz: BREAK
 
@@ -624,31 +622,31 @@ menu math_test_q1:
     "What is 9 times 3?"
 
     "35":
-        call mtw
+        call mtw from _call_mtw
 
     "29":
-        call mtw
+        call mtw from _call_mtw_1
 
     "21":
-        call mtw
+        call mtw from _call_mtw_2
 
     "27":
-        call mtr
+        call mtr from _call_mtr
 
 menu math_test_q2:
     "What is 9 times 3?"
 
     "35":
-        call mtw
+        call mtw from _call_mtw_3
 
     "29":
-        call mtw
+        call mtw from _call_mtw_4
 
     "21":
-        call mtw
+        call mtw from _call_mtw_5
 
     "27":
-        call mtr
+        call mtr from _call_mtr_1
 
 label d1_math_class_end:
     scene school classroom
@@ -784,8 +782,11 @@ label d1_dismissal:
 
     deo "you're nothing"
 
+default stop_deo = False
+
 menu d1_deo_choice:
     "Stop DeO.":
+        $ stop_deo = True
         jump d1_stop_deo
 
     "Do nothing.":
@@ -897,4 +898,5 @@ label d1_go_home:
 
     "END OF DAY 1"
 
-return
+label d1_end:
+    jump d2_start

@@ -1,22 +1,99 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/day_1.rpy", line 848, in script
-    jump d2_start
-ScriptError: could not find label 'd2_start'.
+  File "game/day_1.rpy", line 18, in script
+    m "Yeah, [n]."
+  File "game/day_1.rpy", line 18, in script
+    m "Yeah, [n]."
+  File "renpy/common/00nvl_mode.rpy", line 381, in do_display
+    **display_args)
+TypeError: 'NoneType' object is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/day_1.rpy", line 848, in script
-    jump d2_start
-  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/ast.py", line 1752, in execute
-    rv = renpy.game.script.lookup(target)
-  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/script.py", line 918, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'd2_start'.
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/main.py", line 617, in main
+    run(restart)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/execution.py", line 922, in run_context
+    context.run()
+  File "game/day_1.rpy", line 18, in script
+    m "Yeah, [n]."
+  File "game/day_1.rpy", line 18, in script
+    m "Yeah, [n]."
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/ast.py", line 716, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/exports.py", line 1417, in say
+    who(what, *args, **kwargs)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/character.py", line 1223, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/common/00nvl_mode.rpy", line 381, in do_display
+    **display_args)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/character.py", line 621, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/core.py", line 3276, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/core.py", line 3793, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/core.py", line 2521, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 814, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 814, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 814, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/screen.py", line 681, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 814, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 1238, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 1017, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/viewport.py", line 618, in render
+    surf = renpy.display.render.render(c, cw, ch, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 1238, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/display/layout.py", line 814, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/text/text.py", line 2072, in render
+    layout = Layout(self, width, height, renders, splits_from=virtual_layout)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/text/text.py", line 839, in __init__
+    ts.draw(glyphs, di, self.add_left, self.add_top, self)
+  File "/home/thatchedroof/Documents/renpy-7.4.8-sdk/renpy/text/text.py", line 281, in draw
+    fo.draw(di.surface, xo, yo, color, glyphs, self.underline, self.strikethrough, black_color)
+  File "ftfont.pyx", line 718, in renpy.text.ftfont.FTFont.draw
+TypeError: 'NoneType' object is not iterable
 
-Linux-5.11.0-37-generic-x86_64-with-debian-bullseye-sid
+Linux-5.13.0-20-generic-x86_64-with-debian-11.0
 Ren'Py 7.4.8.1895
 vs DeO 1.0
-Mon Oct  4 21:31:32 2021
+Mon Nov  1 20:21:46 2021
