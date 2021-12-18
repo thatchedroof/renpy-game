@@ -5,6 +5,9 @@ label school_morning_2_start:
     scene school courtyard
     with fade
 
+    show arc
+    with zoomin
+
     arc "Hey [n]!!"
 
     m "Hi Arc."
@@ -25,7 +28,17 @@ label school_morning_2_start:
 
         arc "I dunno."
 
-        arc "I can feel it in the air..."
+        arc "I can feel it in the air."
+
+        arc "Hey, wanna stick together today?"
+
+        arc "We got some time before period 1."
+
+        m "Sure."
+
+        m "Could use it."
+
+        arc "Definitely."
 
     if stop_deo:
 
@@ -35,62 +48,186 @@ label school_morning_2_start:
 
         arc "We got period 1 again today."
 
-        m "What?.."
+        m "What?"
 
-    arc "Well, time to head off to class."
+        arc "Yeah, I know."
 
-    m "Oh. See ya."
+        arc "Something the school has going on."
 
-menu d2_school_navigate_menu:
+        m "Interesting."
 
-    "Main Hallway":
-        jump d2_main_hallway
+        m "Hey, y'know, have you ever seen anything weird around the school?"
 
-    "Classroom":
-        jump d2_classroom
+        arc "All the time. Why?"
 
-    "Cafeteria":
-        jump d2_cafeteria
+        m "I get the feeling we should stick together."
 
-    "Library":
-        jump d2_library
+        arc "As a team?"
 
-    "Gym":
-        jump d2_gym
+        m "Sure... a team."
 
-    "Roof":
-        jump d2_roof
+        arc "Awesome."
 
-    "Stairway":
-        jump d2_stairway
+    m "Well, where do we go first?"
 
-    "{b}Dismissal{\b}" if d2_math_class_v:
-        jump d2_dismissal
+    arc "Hmm..."
 
-default d2_main_hallway_v = False
+    arc "Let's go to the library."
 
-label d2_main_hallway:
-    scene school hallway
+    arc "Nobody ever goes there."
+
+    m "Oh, sounds fun."
+
+label d2_library:
+    scene school library
     with fade
 
     m "..."
 
-    m "Shouldn't there be students around?"
+    arc "What?"
 
-default d2_classroom_v = False
+    m "(It's not here today.)"
 
-label d2_classroom:
-    scene school classroom
+    m "(Did I dream that?)"
+
+    m "Oh um, nothing."
+
+    arc "Ok."
+
+    arc "Let me find a book."
+
+    arc "..."
+
+    arc "Hmm, these are all textbooks."
+
+    arc "There's gotta be something.."
+
+    "(A book falls off the shelf beside Neco-Arc.)"
+
+    arc "Oh, let me get that."
+
+    "(Neco-Arc flips through the pages.)"
+
+    arc "Haha."
+
+    m "What?"
+
+    arc "It's a blank notebook."
+
+    arc "The middle third of the pages have been ripped out."
+
+    m "Let me see!"
+
+    arc "Here."
+
+    m "The name on the front is smudged."
+
+    m "Woah, the back of the cover."
+
+    arc "What does it say?"
+
+    m "It's from last year."
+
+    m "Grade 11 Math."
+
+    arc "Cool. I wonder who's this is?"
+
+    arc "We'll have to ask around."
+
+    m "To see if anybody wants their... year old math notes back?"
+
+    arc "Yeah, ok."
+
+    m "The second page has polynomials."
+
+    m "I could use this for class."
+
+    m "And it has a doodle."
+
+    m "..."
+
+    m "Oh.. god."
+
+    arc "What??"
+
+    m "Well, that's not ok."
+
+    arc "Let me see!!"
+
+    arc "..."
+
+    arc "This doesn't need to be returned."
+
+    m "Yeah."
+
+    m "..."
+
+    m "Huh, this page is just scribbles."
+
+    arc "Scribbles?"
+
+    m "Yeah. Must have gotten bored in class."
+
+    m "Then it.. stops."
+
+    m "The pages were ripped out."
+
+    m "I don't think they even used scissors."
+
+    arc "Ok, cool."
+
+    arc "Let's put this back in the ancient archives."
+
+    m "No, wait."
+
+    m "I think we should keep it."
+
+    arc "Keep it?"
+
+    m "Yeah. It's a piece of history."
+
+    m "This student put a year of effort into these notes."
+
+    m "It's come into our hands now."
+
+    m "He may not even attend this school anymore."
+
+    m "It could be one of the last relics of his time here."
+
+    m "It might not mean much to him but it does mean something to me."
+
+    m "A window into the past."
+
+    "(Neco-Arc's stomach growls.)"
+
+    arc "Mrrowl.."
+
+    arc "I forgot to eat breakfast today..."
+
+    arc "I wonder if the cafeteria has any more food left over..."
+
+    arc "Hey, I'll be back soon, ok?"
+
+    m "Ok."
+
+    hide arc
     with fade
 
+    m "..."
 
+    m "...."
 
-label d2_cafeteria:
+    m "....."
 
-label d2_library:
+    m "When is soon?"
 
+    m "......"
 
-default d2_gym_v = False
+    m "......."
+
+    m "Bored."
+
+    m "I wonder if the gym has anything to do."
 
 label d2_gym:
     scene school gym
@@ -128,51 +265,116 @@ label d2_gym:
 
     m "It's still locked."
 
-    $ d2_gym_v = True
+label d2_cafeteria
+    scene school cafeteria
+    with fade
 
-    label deotime:
+    m "Neco, you won't believe--"
 
-        m "I wonder if the shed in here is still locked."
+    show neco
+    with fade
 
-        deo "what"
+    arc "Shh."
 
-        m "Last time I went in here I had--"
+    m "What?"
 
-        qqq "Hark!"
+    arc "Don't look."
 
-        m "And there it is."
+    arc "The guy at the table next to us."
 
-        qqq "Hosanna!..."
+    arc "I think he's been following me."
 
-        qqq "Children of water and spirit!"
+    m "Wha--"
 
-        deo "what the fuck"
+    arc "Shh!!"
 
-        qqq "You three... full triumvirate... immense power..."
+    arc "Whisper!"
 
-        deo "nope"
+    m "Sorry."
 
-        qqq "It is time I wrought your dea--"
+    m "Why do you think he's been following you?"
 
-        "DeO throws a basketball at the security camera, knocking it off the wall."
+    arc "I saw him on the way to the library."
 
-        m "What??"
+    arc "When I got here, he was at the table at the far side of the cafeteria."
 
-        m "Was that thing gonna kill us??"
+    arc "So far he's changed tables seven times!!"
 
-        arc "I think it was planning on it..."
+    arc "Each one gets closer and closer!"
 
-        deo "wait"
+    m "Why don't you just ask him why he's here?"
 
-        deo "what did it say?"
+    arc "Because, look."
 
-        deo "hold on"
+    "(Neco-Arc pulls out a metal thermos. In the reflection, is...)"
 
-        "DeO kicks open the shed door."
+    m "DeO!!"
 
-        deo "holy fuck"
+    arc "Quiet!"
 
-        deo "it has begun"
+    arc "Ok, I have a plan."
+
+    arc "Let's both get up and walk out."
+
+    arc "Look in the thermos and tell me what he does."
+
+    m "Ok..."
+
+    "(Neco-Arc packs up three trays of lunch and gets up.)"
+
+    "(DeO gets up at the same time.)"
+
+label d2_main_hallway:
+    scene school hallway
+    with fade
+
+    arc "Just go down the hall... don't look..."
+
+    play sound vine_boom volume 1
+
+label deotime:
+
+    m "I wonder if the shed in here is still locked."
+
+    deo "what"
+
+    m "Last time I went in here I had--"
+
+    qqq "Hark!"
+
+    m "And there it is."
+
+    qqq "Hosanna!..."
+
+    qqq "Children of water and spirit!"
+
+    deo "what the fuck"
+
+    qqq "You three... full triumvirate... immense power..."
+
+    deo "nope"
+
+    qqq "It is time I wrought your demis--"
+
+    "DeO throws a basketball at the security camera, knocking it off the wall."
+
+    m "What??"
+
+    m "Was that thing gonna kill us??"
+
+    arc "I think it was planning on it..."
+
+    deo "wait"
+
+    deo "what did it say?"
+
+    deo "hold on"
+
+    "DeO kicks open the shed door."
+
+    deo "holy fuck"
+
+    deo "it's started"
 
 label d2_roof:
 

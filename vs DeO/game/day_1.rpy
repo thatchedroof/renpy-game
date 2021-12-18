@@ -133,7 +133,7 @@ label school_morning_1_start:
 
     m "Yeah, it was great to catch up."
 
-    "(I've known Neco-Arc since primary school. I'm glad they're still the same Arc from all those years ago.)"
+    m "(I've known Neco-Arc since primary school. I'm glad they're still the same Arc from all those years ago.)"
 
     arc "We got a while until first period."
 
