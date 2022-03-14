@@ -36,4 +36,24 @@ define tea = charfunc("Teacher", '#ffffff')
 define qqq = charfunc("???", '#ffffff')
 
 label start:
+
+    play sound neco_arc_sound volume .2
+
+    "Oh god, my head.."
+
+    define m = Character("[n]")
+
+    python:
+        n = renpy.input("Jeez, what was my name again?")
+        n = n.strip().capitalize()
+
+        if not n:
+            n = "MC"
+
+        nupper = n.upper()
+
+    m "Yeah, [n]."
+
+    stop music fadeout 5
+
     jump d1_start

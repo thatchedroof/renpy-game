@@ -1,5 +1,15 @@
 label d2_start:
-    pass
+
+    scene m room
+    with fade
+
+    "..."
+
+    "Oh man, what was I dreaming about?"
+
+    "The thought is fading..."
+
+    "Ants?"
 
 label school_morning_2_start:
     scene school courtyard
@@ -80,6 +90,9 @@ label school_morning_2_start:
 
 label d2_library:
     scene school library
+    with fade
+
+    show arc
     with fade
 
     m "..."
@@ -217,13 +230,9 @@ label d2_library:
 
     m "...."
 
-    m "....."
-
     m "When is soon?"
 
-    m "......"
-
-    m "......."
+    m "....."
 
     m "Bored."
 
@@ -265,13 +274,13 @@ label d2_gym:
 
     m "It's still locked."
 
-label d2_cafeteria
+label d2_cafeteria:
     scene school cafeteria
     with fade
 
     m "Neco, you won't believe--"
 
-    show neco
+    show arc
     with fade
 
     arc "Shh."
@@ -332,52 +341,596 @@ label d2_main_hallway:
 
     play sound vine_boom volume 1
 
-label deotime:
+    show deo
+    with fade
 
-    m "I wonder if the shed in here is still locked."
+    deo "AGH"
 
-    deo "what"
+    deo "oh shit"
 
-    m "Last time I went in here I had--"
+    m "(He fell!)"
 
-    qqq "Hark!"
+    deo "hi"
 
-    m "And there it is."
+    m "Hey, uh.."
 
-    qqq "Hosanna!..."
+    deo "i'm your friend"
 
-    qqq "Children of water and spirit!"
+    m "Ok?"
 
-    deo "what the fuck"
+    deo "we're friends"
 
-    qqq "You three... full triumvirate... immense power..."
+    m "Ok."
 
-    deo "nope"
+    deo "oh, uh, do you want to be my friend"
 
-    qqq "It is time I wrought your demis--"
+    m "Sure, w-"
 
-    "DeO throws a basketball at the security camera, knocking it off the wall."
+    pa "Period 1 is beginning! All students to Period 1 classroom!"
 
-    m "What??"
+    deo "it's period 1 now"
 
-    m "Was that thing gonna kill us??"
+    m "Yeah."
 
-    arc "I think it was planning on it..."
+    deo "gotta go"
 
-    deo "wait"
+    m "Yeah, sure."
 
-    deo "what did it say?"
+    hide deo
+    with fade
 
-    deo "hold on"
+    m "..."
 
-    "DeO kicks open the shed door."
+    arc "What the fuck."
 
-    deo "holy fuck"
+    m "What the fuck?"
 
-    deo "it's started"
+    arc "I can't... process this right now..."
+
+    m "It's time for class anyways."
+
+    m "We'll talk about this after."
+
+    arc "Fine with me."
+
+label d2_math_class:
+    show school classroom
+    with fade
+
+    show cat 5
+    with dissolve
+
+    tea "Hello class."
+
+    tea "You'll be completing math worksheet 23-B."
+
+    tea "Please take one and pass the packets to the student on your left."
+
+    m "(More packets...)"
+
+label math_test:
+
+    scene paper 1
+    with fade
+
+    $ math_test_score = 0
+
+menu math_test_q1:
+    "What is 9 times 3?"
+
+    "35":
+        call mtw from _call_mtw
+
+    "29":
+        call mtw from _call_mtw_1
+
+    "21":
+        call mtw from _call_mtw_2
+
+    "27":
+        call mtr from _call_mtr
+
+menu math_test_q2:
+    "What is 9 times 3?"
+
+    "35":
+        call mtw from _call_mtw_3
+
+    "29":
+        call mtw from _call_mtw_4
+
+    "21":
+        call mtw from _call_mtw_5
+
+    "27":
+        call mtr from _call_mtr_1
+
+label mtw:
+    "Incorrect."
+    return
+
+label mtr:
+    "Correct."
+    $ math_test_score += 1
+    return
+
+label d2_math_class_end:
+    scene school classroom
+    with fade
+
+    m "Um..."
+
+    tea "There's the bell."
+
+label d2_meeting_hallway
+    scene school hallway
+    with fade
+
+    show arc
+    with fade
+
+    arc "Hey [n]!!"
+
+    m "Hey!"
+
+    arc "Have you... seen him around?"
+
+    m "I was in class with you, dude."
+
+    arc "Oh yeah."
+
+    m "So like, what do you know about him?"
+
+    arc "Not much..."
+
+    arc "I've seen him and androo fight a few times."
+
+    arc "Other than that he's a loner."
+
+    arc "Like a lone wolf."
+
+    arc "He keeps to himself most of the time."
+
+    arc "I'm not in any classes with him, and I wasn't here in summer school, but from what I've heard..."
+
+    arc "...he sits in the corner of class, playing obnoxious rhythm games."
+
+    arc "And when the teacher asks him to stop, he-"
+
+    deo "you know what's wild"
+
+    show deo
+    with fade
+
+    m "Wh-"
+
+    deo "how bad you are"
+
+    m "Ok, wa-"
+
+    deo "how much i hate you"
+
+    m "Um, didn't you want to be friends?"
+
+    deo "how dumb you are"
+
+    deo "yeah, let's be friends"
+
+    m "..."
+
+    arc "..."
+
+    arc "I mean, it's worth a shot, right?"
+
+    m "This guy's insane..."
+
+    deo "yeah"
+
+    m "So.."
+
+    m "What do you guys wanna do?"
+
+menu d2_school_navigate_menu:
+
+    "Main Hallway":
+        jump d2_main_hallway
+
+    "Classroom":
+        jump d2_classroom
+
+    "Cafeteria":
+        jump d2_cafeteria
+
+    "Library":
+        jump d2_library
+
+    "Gym":
+        jump d2_gym
+
+    "Roof":
+        jump d2_roof
+
+    "Stairway":
+        jump d2_stairway
+
+    "{b}Dismissal{\b}" if d2_stairway_opened:
+        jump d2_dismissal
+
+default d2_main_hallway = False
+
+# renpy-graphviz: BREAK
+
+label d2_main_hallway:
+    scene school hallway
+    with fade
+
+    if not d2_main_hallway_v:
+
+        m "We... were here already."
+
+        arc "Yeah."
+
+        m "Just, like, a minute ago."
+
+        deo "what"
+
+        $ d2_main_hallway_v = True
+
+    else:
+
+        m "(Hello? Helloo?)"
+
+        m "(Phone clicks.)"
+
+    jump d2_school_navigate
+
+default d2_classroom = False
+
+# renpy-graphviz: BREAK
+
+label d2_classroom:
+    scene school classroom
+    with fade
+
+    if not d2_classroom_v:
+
+        m "Ok, cmon. We can leave now."
+
+        $ d2_classroom_v = True
+
+    else:
+
+        m "Really?"
+
+    jump d2_school_navigate
+
+default d2_cafeteria = False
+
+# renpy-graphviz: BREAK
+
+label d2_cafeteria:
+    scene school cafeteria
+    with fade
+
+    if not d2_cafeteria_v:
+
+        deo "thats crazy"
+
+        deo "going back to the cafeteria where they serve gloop"
+
+        m "Yeah."
+
+        $ d2_cafeteria_v = True
+
+    else:
+
+        deo "crazy how much budget they spent exclusively on the cafeteria"
+
+        deo "food is strange this year"
+
+    jump d2_school_navigate
+
+default d2_library = False
+
+# renpy-graphviz: BREAK
+
+label d2_library:
+    scene school library
+    with fade
+
+    if not d2_library_v:
+
+        deo "uncanny... i feel a presence"
+
+        m "Oh, yeah. Yesterday I did too."
+
+        deo "shut up"
+
+        # INSERT BOOK COLLECTING DIALOGUE
+
+        $ d2_library_v = True
+
+    else:
+
+        arc "Thanks..."
+
+    jump d2_school_navigate
+
+default d2_roof = False
+
+# renpy-graphviz: BREAK
 
 label d2_roof:
+    scene school roof
+    with fade
+
+    if not d2_roof_v:
+
+        m "It's chilly today."
+
+        deo "it's not that cold"
+
+        m "You're covered in fur!"
+
+        # INSERT ARCH DIALOGUE
+
+        $ d2_roof_v = True
+
+    else:
+
+
+
+    jump d2_school_navigate
+
+default d2_stairway = False
+
+# renpy-graphviz: BREAK
 
 label d2_stairway:
+    scene school stairway
+    with fade
 
-label d2_dismissal:
+    if not nametag_get:
+
+        pol "Kurwa bez kox jablek jestes bity."
+
+        pol "Kurwa mac."
+
+    elif not d2_stairway_v:
+
+        pol "Nowy regulamin! #zasady"
+
+        m ""
+
+        $ d2_stairway_v = True
+
+    else:
+
+
+
+    jump d2_school_navigate
+
+default d2_gym = False
+
+# renpy-graphviz: BREAK
+
+label d2_gym:
+    scene school gym
+    with fade
+
+    if not d2_gym_v:
+
+        scene school gym
+        with fade
+
+        m "I wonder if the shed in here is still locked."
+
+        deo "what"
+
+        m "Last time I went in here I had--"
+
+        qqq "Hark!"
+
+        m "And there it is."
+
+        qqq "Hosanna!..."
+
+        qqq "Children of water and spirit!"
+
+        deo "what the fuck"
+
+        qqq "You three... full triumvirate... immense power..."
+
+        deo "nope"
+
+        qqq "It is time I wrought your demis--"
+
+        "DeO throws a basketball at the security camera, knocking it off the wall."
+
+        m "What??"
+
+        m "Was that thing gonna kill us??"
+
+        arc "I think it was planning on it..."
+
+        deo "wait"
+
+        deo "what did it say?"
+
+        deo "hold on"
+
+        "DeO kicks open the shed door."
+
+        deo "holy fuck"
+
+        "Look at your shadow. What do you see?"
+
+        m "A face!"
+
+        "Not just any face."
+
+        m "Oh, I understand."
+
+        m "..."
+
+        m "I don't understand."
+
+        "What can you remember?"
+
+        m "Nothing much."
+
+        "Where are we?"
+
+        m "Underwater."
+
+        "Wrong. Where are we really?"
+
+        m "This isn't real."
+
+        "I will show you something. But you must hand over some control."
+
+        m "Control over what?"
+
+        "You won't mind, will you?"
+
+        "Just try not to think for a bit."
+
+        m "How much control?"
+
+        "You're lax. That's all you've ever been. You're lazy."
+
+        m "What?"
+
+        "All you have to do is be a bit lazier."
+
+        m "..."
+
+        m "Fine."
+
+        arc "Hey [n]."
+
+        deo "hi [n]."
+
+        arc "Can you help us figure out how to use these?"
+
+        m "What? This is just some gym equipment..."
+
+        m "I can't, there's nothing to do with these..."
+
+        tea "I need you to use these for me."
+
+        m "What??"
+
+        m "Ok, I'll try..."
+
+        m "..."
+
+        m "I can't put them together..."
+
+        arc "Hey! What's taking so long?"
+
+        deo "you need to destroy this"
+
+        m "Is that the school garden?"
+
+        deo "figure out how to destroy this"
+
+        m "But these are just random... this is random..."
+
+        deo "the ants here"
+
+        deo "they're not in our design"
+
+        deo "they walked away from us"
+
+        m "You've hid them back here?"
+
+        deo "yes."
+
+        deo "but they're causing problems again"
+
+        deo "you need to destroy every weed."
+
+        m "Hey, did you say ants, or weeds..."
+
+        arc "It doesn't matter."
+
+        deo "they'll start crawling on you if you don't start."
+
+        m "I have a feeling these aren't either."
+
+        deo "doesn't matter. use your tools and fix it."
+
+        m "Hey! How do I use these??"
+
+        m "Help!"
+
+        m "..."
+
+        m "Fix it.. I can't..."
+
+        m "Oh!"
+
+        m "I can!"
+
+        m "Oh, this is going to take so long..."
+
+        m "I'll never be able to finish in time..."
+
+        m "I..."
+
+        arc "Dude, dude, is [n] gonna wake up?"
+
+        deo "i don't know"
+
+        arc "Jesus christ... the fuck happened??"
+
+        m "oh... shit"
+
+        arc "[nupper]!!!"
+
+        m "I... oh my god, what's in the shed..."
+
+        arc "It was just some gym stuff dude, calm down..."
+
+        m "Wait... shit... did anybody take it??"
+
+        deo "here. i brought it."
+
+        m "Can I see it?"
+
+        deo "you're... already holding it."
+
+        m "Wait, when did I get this?"
+
+        deo "..."
+
+        arc "Hey, I think it's time to head home."
+
+        m "What?"
+
+        m "Wait, how long have I been sleeping?"
+
+        arc "Ok, let's put these back..."
+
+        m "..."
+
+        arc "Jeez, you don't have to be so loud..."
+
+        m "What? But I didn't say anything!"
+
+        arc "The teachers won't like us taking the gym equipment home."
+
+        deo "i know where to put them"
+
+        deo "they'll be safe"
+
+        m "Ok..."
+
+        $ d2_gym_v = True
+
+    else:
+
+
+
+    jump d2_school_navigate

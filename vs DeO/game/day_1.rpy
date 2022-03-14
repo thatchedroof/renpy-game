@@ -1,24 +1,5 @@
 label d1_start:
 
-    play sound neco_arc_sound volume .05
-
-    "Oh god, my head.."
-
-    define m = Character("[n]")
-
-    python:
-        n = renpy.input("Jeez, what was my name again?")
-        n = n.strip().capitalize()
-
-        if not n:
-            n = "MC"
-
-        nupper = n.upper()
-
-    m "Yeah, [n]."
-
-    stop music fadeout 5
-
     scene m room
     with fade
 

@@ -2,11 +2,11 @@
 errors listed below, and try again.
 
 
-The label school_morning_1_start is defined twice, at File "game/day_1.rpy", line 88:
-label school_morning_1_start:
-and File "game/day_2.rpy", line 4:
-label school_morning_1_start:
+The label start is defined twice, at File "game/day_2.rpy", line 1:
+label start:
+and File "game/script.rpy", line 38:
+label start:
 
 
-Ren'Py Version: Ren'Py 7.4.8.1895
-Mon Nov 22 21:59:25 2021
+Ren'Py Version: Ren'Py 7.4.11.2266
+Sat Dec 18 17:20:31 2021
